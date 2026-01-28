@@ -3,7 +3,7 @@
 ya
 
 ```luau
-local function fuckEveryone()
-    print("suckers")
+local function test()
+    print("yaugh")
 end
 ```
