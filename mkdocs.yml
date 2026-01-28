@@ -1,5 +1,6 @@
 site_name: My MkDocs Material Documentation
 site_url: https://draxfm.github.io/flux/
+docs_dir: docs
 use_directory_urls: true
 theme:
   name: material
