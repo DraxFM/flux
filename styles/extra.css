@@ -1,0 +1,13 @@
+:root  > * {
+    --md-default-bg-color: #282933
+}
+
+body {
+  color: white;
+}
+
+/* Only affect dark mode (slate) */
+[data-md-color-scheme="slate"] {
+  --md-code-bg-color: #1F1F1F; /* darker grey for inline code */
+  --md-code-fg-color: #FFFFFF;
+}
