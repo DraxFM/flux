@@ -1,25 +1,42 @@
-site_name: My MkDocs Material Documentation
-site_url: https://draxfm.github.io/flux/
+site_name: Flux Chat
+site_url: https://draxfm.github.io/Flux/
 docs_dir: docs
-use_directory_urls: true
+nav:
+  - Home:
+    - Introduction: index.md
+    - Get Started: installation.md
+    - Features: features.md
+    - API: api.md
+  - Bug Reporting: bug-reporting.md
 theme:
   name: material
   icon:
     logo: simple/livechat
   features:
+    - navigation.tabs
     - navigation.footer
+    - navigation.sections
+    - navigation.instant
   font:
-    text: Merriweather Sans
+    text: Inter
   palette: 
     scheme: slate
-    primary: indigo
-    accent: indigo
+    primary: blue
+    accent: green
+
+extra_css:
+  - styles/extra.css
+
   
 markdown_extensions:
 - attr_list
 - pymdownx.highlight
 - pymdownx.inlinehilite
-- pymdownx.superfences
+- pymdownx.superfences:
+    custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 - admonition
 - pymdownx.details
 - pymdownx.emoji:
@@ -34,6 +51,6 @@ extra_javascript:
 extra:
   social:
     - icon: simple/roblox
-      link: https://www.roblox.com/de/users/1817341144/profile
+      link: https://www.roblox.com/users/1817341144/profile
     - icon: simple/github
       link: https://www.github.com/DraxFM

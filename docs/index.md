@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+## What is Flux?
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Flux is a modular chat system supposed to replace the default Roblox Chat. It currently supports PC, Mobile and Tablet.
+Flux is in a heavy development state. This means there are several features planned for the 1.0 release not (fully) implemented yet!
 
-## Commands
+This documentation will guide you through the various features of Flux and how to install & customize it.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+---
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Read before Using
+When using Flux as-is without changing any settings, it will be ToS compliant. Though changing some of the settings can lead to moderation. I will be sure to mention these settings. Still, you are responsible for the settings you change in Flux!
