@@ -1,0 +1,1703 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://draxfm.github.io/Flux/api/">
+      
+      
+        <link rel="prev" href="../features/">
+      
+      
+        <link rel="next" href="../other/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>API - Flux Chat</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Flux Chat" class="md-header__button md-logo" aria-label="Flux Chat" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.849 14.91c-.24 2.94-2.73 5.22-5.7 5.19h-3.15l-6 3.9v-3.9l6-3.9h3.15c.93.03 1.71-.66 1.83-1.59.18-3 .18-6-.06-9-.06-.84-.75-1.47-1.56-1.53-2.04-.09-4.2-.18-6.36-.18s-4.32.06-6.36.21c-.84.06-1.5.69-1.56 1.53-.21 3-.24 6-.06 9 .09.93.9 1.59 1.83 1.56h3.15v3.9h-3.15a5.644 5.644 0 0 1-5.7-5.19c-.21-3.21-.18-6.39.06-9.6a5.57 5.57 0 0 1 5.19-5.1c2.1-.15 4.35-.21 6.6-.21s4.5.06 6.63.24a5.57 5.57 0 0 1 5.19 5.1c.21 3.18.24 6.39.03 9.57"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Flux Chat
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DraxFM/Flux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DraxFM/Flux
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../other/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Other
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Flux Chat" class="md-nav__button md-logo" aria-label="Flux Chat" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.849 14.91c-.24 2.94-2.73 5.22-5.7 5.19h-3.15l-6 3.9v-3.9l6-3.9h3.15c.93.03 1.71-.66 1.83-1.59.18-3 .18-6-.06-9-.06-.84-.75-1.47-1.56-1.53-2.04-.09-4.2-.18-6.36-.18s-4.32.06-6.36.21c-.84.06-1.5.69-1.56 1.53-.21 3-.24 6-.06 9 .09.93.9 1.59 1.83 1.56h3.15v3.9h-3.15a5.644 5.644 0 0 1-5.7-5.19c-.21-3.21-.18-6.39.06-9.6a5.57 5.57 0 0 1 5.19-5.1c2.1-.15 4.35-.21 6.6-.21s4.5.06 6.63.24a5.57 5.57 0 0 1 5.19 5.1c.21 3.18.24 6.39.03 9.57"/></svg>
+
+    </a>
+    Flux Chat
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DraxFM/Flux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DraxFM/Flux
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changeprefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        changePrefix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="changePrefix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        broadcastMessage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="broadcastMessage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastglobalmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        broadcastGlobalMessage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatbanplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chatBanPlayer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chatBanPlayer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unchatbanplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unChatBanPlayer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onincomingmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnIncomingMessage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OnIncomingMessage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fluxenabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Debug
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxdisablerobloxchat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.DisableRobloxChat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenablefiltering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableFiltering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableprojection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableProjection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableuserchecking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableUserChecking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_chatcache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_ChatCache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_maximummessagelength" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_MaximumMessageLength
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_maximummessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_MaximumMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_joinmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_JoinMessage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_leavemessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_LeaveMessage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableutilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableUtilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxutilities_quickchat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Utilities_QuickChat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxutilities_quickchatmessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Utilities_QuickChatMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableantispamming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableAntiSpamming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxantispamming_maxmessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.AntiSpamming_MaxMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxantispamming_cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.AntiSpamming_Cooldown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxantispamming_detectspammers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.AntiSpamming_DetectSpammers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changeprefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        changePrefix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="changePrefix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        broadcastMessage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="broadcastMessage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastglobalmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        broadcastGlobalMessage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatbanplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chatBanPlayer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chatBanPlayer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unchatbanplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unChatBanPlayer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onincomingmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnIncomingMessage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OnIncomingMessage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-sample_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fluxenabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Debug
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxdisablerobloxchat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.DisableRobloxChat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenablefiltering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableFiltering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableprojection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableProjection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableuserchecking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableUserChecking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_chatcache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_ChatCache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_maximummessagelength" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_MaximumMessageLength
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_maximummessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_MaximumMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_joinmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_JoinMessage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxchatbehaviour_leavemessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.ChatBehaviour_LeaveMessage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableutilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableUtilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxutilities_quickchat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Utilities_QuickChat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxutilities_quickchatmessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.Utilities_QuickChatMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxenableantispamming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.EnableAntiSpamming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxantispamming_maxmessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.AntiSpamming_MaxMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxantispamming_cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.AntiSpamming_Cooldown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxantispamming_detectspammers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux.AntiSpamming_DetectSpammers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="api">API</h1>
+<h2 id="methods">Methods</h2>
+<h3 id="changeprefix">changePrefix</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">:</span><span class="nc">changePrefix</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span><span class="w"> </span><span class="nc">Player</span><span class="p">,</span><span class="w"> </span><span class="nv">prefix</span><span class="p">:</span><span class="w"> </span><span class="nc">string</span><span class="p">,</span><span class="w"> </span><span class="nv">color</span><span class="p">:</span><span class="w"> </span><span class="nc">Color3</span><span class="err">?</span><span class="p">):</span><span class="w"> </span><span class="p">()</span>
+</code></pre></div>
+Changes the Chat prefix of the specified player. This prefix is automatically filtered.<br />
+<code>color</code> can be left empty. <code>color</code> will default to white in that case.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This method can only be implemented on the server.</p>
+</div>
+<h4 id="code-sample">Code Sample</h4>
+<p>This example checks the users <code>UserId</code> and applies a prefix dependent on it.<br />
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">ownerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w">                       </span><span class="c1">-- UserId of the user that is supposed to receive that prefix</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;[OWNER]&quot;</span><span class="w">                </span><span class="c1">-- Desired Prefix to be applied to Player</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Color3</span><span class="p">.</span><span class="nf">fromRGB</span><span class="p">(</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Color of the Prefix Text</span>
+<span class="nv">game</span><span class="p">:</span><span class="nc">GetService</span><span class="p">(</span><span class="s2">&quot;Players&quot;</span><span class="p">).</span><span class="nv">PlayerAdded</span><span class="p">:</span><span class="nc">Connect</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">.</span><span class="nv">UserId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">ownerId</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">Flux</span><span class="p">:</span><span class="nc">changePrefix</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">prefix</span><span class="p">,</span><span class="w"> </span><span class="nv">color</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h3 id="broadcastmessage">broadcastMessage</h3>
+<p>Replicates a message to <code>recipient</code> in form of a system message. Supports Rich Text formatting.
+<div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">:</span><span class="nc">broadcastMessage</span><span class="p">(</span><span class="nv">recipient</span><span class="p">:</span><span class="w"> </span><span class="nc">any</span><span class="err">?</span><span class="p">,</span><span class="w"> </span><span class="nv">message</span><span class="p">:</span><span class="w"> </span><span class="nc">string</span><span class="p">):</span><span class="w"> </span><span class="p">()</span>
+</code></pre></div>
+<code>recipient</code> can either be a <code>Team</code> instance, a <code>Player</code> instance or a table. If <code>recipient</code> is a table, that table will be iterated and every <code>Player</code> instance found will receive the broadcast.  </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This method can only be implemented on the server.</p>
+</div>
+<h4 id="code-sample_1">Code Sample</h4>
+<p>This example broadcasts a serverwide message to all Players in the server instance.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">:</span><span class="nc">GetService</span><span class="p">(</span><span class="s2">&quot;Players&quot;</span><span class="p">):</span><span class="nc">GetPlayers</span><span class="p">()</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This is a serverwide announcement!&quot;</span>
+
+<span class="nv">Flux</span><span class="p">:</span><span class="nc">broadcastMessage</span><span class="p">(</span><span class="nv">players</span><span class="p">,</span><span class="w"> </span><span class="nv">message</span><span class="p">)</span>
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The content of the message is not automatically filtered. This Method should never contain any user generated content!</p>
+</div>
+<hr />
+<h3 id="broadcastglobalmessage">broadcastGlobalMessage</h3>
+<p>Replicates a message to every Player across all active game servers of the same experience. Supports Rich Text formatting.
+<div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">:</span><span class="nc">broadcastGlobalMessage</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span><span class="w"> </span><span class="nc">string</span><span class="p">):</span><span class="w"> </span><span class="p">()</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This method can only be called from the server.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The content of the message is not automatically filtered. This Method should never contain any user generated content!</p>
+</div>
+<hr />
+<h3 id="chatbanplayer">chatBanPlayer</h3>
+<p>Bans a player from chatting over the Flux Chat System. This includes QuickChatting.
+<div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">:</span><span class="nc">chatBanPlayer</span><span class="p">(</span><span class="nv">violator</span><span class="p">:</span><span class="w"> </span><span class="nc">any</span><span class="p">,</span><span class="w"> </span><span class="nv">reason</span><span class="p">:</span><span class="w"> </span><span class="nc">string</span><span class="err">?</span><span class="p">):</span><span class="w"> </span><span class="p">()</span>
+</code></pre></div>
+<code>violator</code> can either be an instance of <code>Player</code> or a <code>UserId</code> that belongs to the violator. If a reason isn't specified, <code>reason</code> will default to "<code>No reason specified</code>".</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This method can only be called from the Server.<br />
+This method will kick the player to ensure the chat ban will be enforced immediately. Banned Players can still see other players' messages.</p>
+</div>
+<h4 id="code-sample_2">Code Sample</h4>
+<p>This example bans a random player from the game server.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">Players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">:</span><span class="nc">GetService</span><span class="p">(</span><span class="s2">&quot;Players&quot;</span><span class="p">):</span><span class="nc">GetPlayers</span><span class="p">()</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math</span><span class="p">.</span><span class="nf">random</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="err">#</span><span class="nv">Players</span><span class="p">)</span>
+<span class="nv">Flux</span><span class="p">:</span><span class="nc">chatBanPlayer</span><span class="p">(</span><span class="nv">Players</span><span class="p">[</span><span class="nv">target</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;Unlucky guy&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h3 id="unchatbanplayer">unChatBanPlayer</h3>
+<p>Unbans a player, enabling them to actively chat over the Flux Chat System again.
+<div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">:</span><span class="nc">unChatBanPlayer</span><span class="p">(</span><span class="nv">userId</span><span class="p">:</span><span class="w"> </span><span class="nc">number</span><span class="p">):</span><span class="w"> </span><span class="p">()</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This method can only be called from the Server.</p>
+</div>
+<hr />
+<h2 id="events">Events</h2>
+<h3 id="onincomingmessage">OnIncomingMessage</h3>
+<p>Called when Flux is receiving a chat message.
+<div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nf">OnIncomingMessage</span><span class="p">():</span><span class="w"> </span><span class="nc">message</span><span class="p">:</span><span class="w"> </span><span class="nc">string</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="w"> </span><span class="nc">Player</span>
+</code></pre></div>
+Returns <code>message</code>, the messages content that was sent in form of a string and <code>player</code> will pass the Player Instance of the messages author.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This event can only be implemented on the client.</p>
+</div>
+<h4 id="code-sample_3">Code Sample</h4>
+<p>This example will check if the LocalPlayers' DisplayName has been mentioned in a chat message and will print to the output if so.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">LocalPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">Players</span><span class="p">.</span><span class="nv">LocalPlayer</span>
+
+<span class="nv">Flux</span><span class="p">.</span><span class="nv">OnIncomingMessage</span><span class="p">:</span><span class="nc">Connect</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">message</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- Prevents the output if the mention comes from the Player themselves</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nv">LocalPlayer</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span>
+<span class="w">        </span><span class="nv">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="nv">message</span><span class="p">)</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">LocalPlayerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="nv">LocalPlayer</span><span class="p">.</span><span class="nv">DisplayName</span><span class="p">)</span>
+<span class="w">        </span><span class="c1">-- checks if DisplayName is contained in sent message</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="nv">LocalPlayerName</span><span class="p">,</span><span class="w"> </span><span class="nv">message</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nf">print</span><span class="p">(</span><span class="nv">player</span><span class="p">.</span><span class="nv">Name</span><span class="o">..</span><span class="s2">&quot; has mentioned your name.&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h2 id="configuration-properties">Configuration Properties</h2>
+<p>Read the <a href="../installation/#customizing-features">Get Started Section</a> to figure out where to find these configuration properties.<br />
+These properties can technically be changed at runtime but it is recommended to either set them beforehand or at the start of the game server.<br />
+A dynamic change of some of these properties could lead to unexpected behaviour.</p>
+<h3 id="fluxenabled">Flux.Enabled</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">Enabled</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether the Chat System will be enabled or not.  </p>
+<hr />
+<h3 id="fluxdebug">Flux.Debug</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">Debug</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Enables debug messages for Flux.</p>
+<hr />
+<h3 id="fluxdisablerobloxchat">Flux.DisableRobloxChat</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">DisableRobloxChat</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Disables the default Roblox Chat when set to true.</p>
+<hr />
+<h3 id="fluxenablefiltering">Flux.EnableFiltering</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">EnableFiltering</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether chat messages will be filtered or not.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Disabling this could potentially get your game in trouble.</p>
+</div>
+<hr />
+<h3 id="fluxenableprojection">Flux.EnableProjection</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">EnableProjection</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether projection system will be used.<br />
+The Projection system enables players to communicate with eachother, even though they wouldn't normally be able to due to account settings.  </p>
+<p>For the Projection system to work, a projector in form of another player in the same game server is required. This projector needs the ability to chat and will automatically be selected when this feature is enabled.
+<pre class="mermaid"><code>graph LR
+  A[Player1] --&gt;|Can't chat| B{Player2};
+  A --&gt;|Communicates inability to chat| C[Server];
+  C --&gt;|Finds Projector| D[Player3];
+  D --&gt;|Projects/Masks Message| B;</code></pre></p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Enabling this could potentially get your game in trouble.</p>
+</div>
+<hr />
+<h3 id="fluxenableuserchecking">Flux.EnableUserChecking</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">EnableUserChecking</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+This ensures that chatting between users is permitted.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Disabling this could potentially get your game in trouble.</p>
+</div>
+<hr />
+<h3 id="fluxchatbehaviour_chatcache">Flux.ChatBehaviour_ChatCache</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">ChatBehaviour_ChatCache</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Ever wanted to read previous messages in the chat before you joined the game server? The Chat Cache system loads previous messages into the chat of newly joined players.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Enabling this could potentially get your game in trouble.</p>
+<details class="example">
+<summary>Expand to read why</summary>
+<p>The Chat Cache stores the messages that are sent in the Flux Chat on the server. If a player chats, their message stored in the chat cache and then they leave, I have no way of checking if that person is allowed to chat with any player that joins the server now. I could technically only display the previous messages of players that are still in the game server, as this lets me check the validity of that action but it also kind of removes the functionality of the chat cache. As Roblox' new content sharing rule under age groups is very undocumented (in my opinion), I'm simply marking this as possibly risky to ensure there's no misunderstandings.</p>
+</details>
+</div>
+<hr />
+<h3 id="fluxchatbehaviour_maximummessagelength">Flux.ChatBehaviour_MaximumMessageLength</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">ChatBehaviour_MaximumMessageLength</span><span class="p">:</span><span class="w"> </span><span class="nc">number</span>
+</code></pre></div>
+Defines how many characters a chat message can consist of.</p>
+<hr />
+<h3 id="fluxchatbehaviour_maximummessages">Flux.ChatBehaviour_MaximumMessages</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">ChatBehaviour_MaximumMessages</span><span class="p">:</span><span class="w"> </span><span class="nc">number</span>
+</code></pre></div>
+Defines how many messages will be kept in the Chat Window before Flux automatically starts deleting the oldest ones.</p>
+<hr />
+<h3 id="fluxchatbehaviour_joinmessage">Flux.ChatBehaviour_JoinMessage</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">ChatBehaviour_JoinMessage</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether it is to be announced when a player joins the game.</p>
+<hr />
+<h3 id="fluxchatbehaviour_leavemessage">Flux.ChatBehaviour_LeaveMessage</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">ChatBehaviour_LeaveMessage</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether it is to be announced when a player leaves the game.</p>
+<hr />
+<h3 id="fluxenableutilities">Flux.EnableUtilities</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">EnableUtilities</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether Utilities shall be enabled or disabled.</p>
+<hr />
+<h3 id="fluxutilities_quickchat">Flux.Utilities_QuickChat</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">Utilities_QuickChat</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines if the QuickChat Utilitiy shall be enabled. This lets players communicate vaguely with eachother without violating ToS.</p>
+<hr />
+<h3 id="fluxutilities_quickchatmessages">Flux.Utilities_QuickChatMessages</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">Utilities_QuickChatMessages</span><span class="p">:</span><span class="w"> </span><span class="nc">table</span>
+</code></pre></div>
+A table that consists of strings that will be offered to the user to use as QuickChat option. This table can be expanded on at will and Flux will automatically add these options to the QuickChat Window.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The strings in these tables will not be filtered! If you as a developer break ToS by adding inappropiate messages, that's 100% on you!</p>
+</div>
+<hr />
+<h3 id="fluxenableantispamming">Flux.EnableAntiSpamming</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">EnableAntiSpamming</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Defines whether to enable the anti spamming system. Disabling this fully is not recommended.</p>
+<hr />
+<h3 id="fluxantispamming_maxmessages">Flux.AntiSpamming_MaxMessages</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">AntiSpamming_MaxMessages</span><span class="p">:</span><span class="w"> </span><span class="nc">number</span>
+</code></pre></div>
+This will define how many messages a player is able to send in a certain amount of time before he gets throttled.</p>
+<hr />
+<h3 id="fluxantispamming_cooldown">Flux.AntiSpamming_Cooldown</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">AntiSpamming_Cooldown</span><span class="p">:</span><span class="w"> </span><span class="nc">number</span>
+</code></pre></div>
+This will define how long (in seconds) a user has to wait before he can send a message again after being throttled by the Anti Spamming System.</p>
+<hr />
+<h3 id="fluxantispamming_detectspammers">Flux.AntiSpamming_DetectSpammers</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">Flux</span><span class="p">.</span><span class="nv">AntiSpamming_DetectSpammers</span><span class="p">:</span><span class="w"> </span><span class="nc">boolean</span>
+</code></pre></div>
+Currenlty unused configuration that will use a smart system to detect if a Player is purposely spamming the chat and throttling him in a more strict way if they are found to do so.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../features/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Features">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Features
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../other/" class="md-footer__link md-footer__link--next" aria-label="Next: Other">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Other
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.roblox.com/users/1817341144/profile" target="_blank" rel="noopener" title="www.roblox.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.926 23.998 0 18.892 5.075.002 24 5.108ZM15.348 10.09l-5.282-1.453-1.414 5.273 5.282 1.453z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.github.com/DraxFM" target="_blank" rel="noopener" title="www.github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.footer", "navigation.sections", "navigation.instant"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      
+        <script src="https://unpkg.com/highlightjs-luau/dist/luau.min.js"></script>
+      
+        <script src="../javascripts/highlight-init.js"></script>
+      
+    
+  </body>
+</html>
